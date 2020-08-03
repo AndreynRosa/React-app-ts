@@ -1,10 +1,11 @@
 import { action } from 'typesafe-actions';
 import { RepositoriesTypes, Repository } from './types';
 
-export const loadRequest = (s: string) =>
-  action(RepositoriesTypes.LOAD_REQUEST, { s });
+export const repositoriesLoadRequest = (name: string) =>
+  action(RepositoriesTypes.LOAD_REQUEST, { name });
 
-export const loadSuccess = (data: Repository[]) =>
+export const repositoriesLoadSuccess = (data: Repository[]) =>
   action(RepositoriesTypes.LOAD_SUCCCES, { data });
 
-export const loadFailure = () => action(RepositoriesTypes.LOAD_FAILURE);
+export const repositoriesLoadFailure = () =>
+  action(RepositoriesTypes.LOAD_FAILURE);

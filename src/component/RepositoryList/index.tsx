@@ -1,49 +1,34 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
-
-import { Repository } from '../../store/ducks/repositories/types';
-import { ApplicationState } from '../../store';
-
-import * as RepositoriesActions from '../../store/ducks/repositories/actions';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import RepositoryItem from '../RepositoryItem';
 
-interface StateProps {
-  repositories: Repository[];
+import {
+  RepositoriesState,
+  Repository,
+} from '../../store/ducks/repositories/types';
+
+interface RootState {
+  repositories: RepositoriesState;
 }
 
-interface DispatchProps {
-  loadRequest(name: string): void;
-}
+const RepositoryList: React.FC = () => {
+  const [serching, setSerching] = useState(false);
+  const repositoryList = useSelector((state: RootState) => state.repositories);
+  const dispatch = useDispatch();
 
-type Props = StateProps & DispatchProps;
+  // useEffect(() => {
+  //   if (!serching) {
+  //     setSerching(true);
+  //   }
+  // }, [dispatch, repositoryList, serching]);
+  return (
+    <ul>
+      {repositoryList.data.map((repositorysss: Repository) => (
+        <RepositoryItem key={repositorysss.id} repository={repositorysss} />
+      ))}
+    </ul>
+  );
+};
 
-class RepositoryList extends Component<Props> {
-  componentDidMount() {
-    const { loadRequest } = this.props;
-
-    loadRequest('namesss');
-  }
-
-  render() {
-    const { repositories } = this.props;
-
-    return (
-      <ul>
-        {repositories.map((repository) => (
-          <RepositoryItem key={repository.id} repository={repository} />
-        ))}
-      </ul>
-    );
-  }
-}
-
-const mapStateToProps = (state: ApplicationState) => ({
-  repositories: state.repositories.data,
-});
-
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(RepositoriesActions, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(RepositoryList);
+export default RepositoryList;
