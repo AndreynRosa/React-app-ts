@@ -13,10 +13,13 @@ async function getOrganizationNames(organizationsURL: string) {
   const response = await api.get(organizationsURL);
   return response.data?.name;
 }
-export function* loadUser(s: ActionType<typeof actions.userLoadRequest>) {
+export function* loadUser(action: ActionType<typeof actions.userLoadRequest>) {
   try {
-    const response = yield call(api.get, 'users/ronenhamias');
-    const organizationsReponse = yield call(api.get, 'users/ronenhamias/orgs');
+    const response = yield call(api.get, `users/${action.payload.name}`);
+    const organizationsReponse = yield call(
+      api.get,
+      `users/${action.payload.name}/orgs`,
+    );
     const organizations = organizationsReponse.data.map(
       (organization: Organization) => {
         return organization.url;

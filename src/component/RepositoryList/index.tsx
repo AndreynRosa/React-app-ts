@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import RepositoryItem from '../RepositoryItem';
 
@@ -13,15 +13,8 @@ interface RootState {
 }
 
 const RepositoryList: React.FC = () => {
-  const [serching, setSerching] = useState(false);
   const repositoryList = useSelector((state: RootState) => state.repositories);
-  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   if (!serching) {
-  //     setSerching(true);
-  //   }
-  // }, [dispatch, repositoryList, serching]);
   return (
     <ul>
       {repositoryList.data.map((repositorysss: Repository) => (

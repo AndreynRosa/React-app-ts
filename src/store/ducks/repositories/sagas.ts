@@ -10,7 +10,7 @@ export function* loadRepositories(
 ) {
   try {
     const url = `users/${action.payload.name}/repos`;
-    console.log('url', url);
+    console.log('url repos', url);
     const response = yield call(api.get, url);
 
     yield put(repositoriesLoadSuccess(response.data));

@@ -1,4 +1,4 @@
-import { all, takeLatest, takeEvery } from 'redux-saga/effects';
+import { all, takeEvery } from 'redux-saga/effects';
 
 import { RepositoriesTypes } from './repositories/types';
 import { loadRepositories } from './repositories/sagas';

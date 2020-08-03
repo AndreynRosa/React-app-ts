@@ -15,15 +15,15 @@ const SerachUser: React.FC = () => {
 
   const dispatchRepositories = useCallback(() => {
     dispatch(repositoriesLoadRequest(serachName));
-  }, [dispatch]);
+  }, [dispatch, serachName]);
 
   const dispatchFollowers = useCallback(() => {
     dispatch(folowersLoadRequest(serachName));
   }, [dispatch, serachName]);
 
   const dispatchUsers = useCallback(() => {
-    dispatch(userLoadRequest(''));
-  }, [dispatch]);
+    dispatch(userLoadRequest(serachName));
+  }, [dispatch, serachName]);
 
   const onFinish = () => {
     dispatchFollowers();
@@ -53,7 +53,6 @@ const SerachUser: React.FC = () => {
             style={{ width: '100%' }}
             onChange={(e) => {
               setSerachName(e?.currentTarget.value);
-              console.log('setSerace', serachName);
             }}
             value={serachName}
             placeholder="Github username"
