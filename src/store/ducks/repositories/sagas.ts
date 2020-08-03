@@ -6,9 +6,10 @@ import api from '../../../services/api';
 import * as actions from './actions';
 
 export function* load(s: ActionType<typeof actions.loadRequest>) {
-  console.log('aqui', s);
   try {
-    const response = yield call(api.get, 'users/diego3g/repos');
+    // const test = yield call(api.get, 'users/AndreynRosa');
+
+    const response = yield call(api.get, 'users/AndreynRosa/repos');
 
     yield put(loadSuccess(response.data));
   } catch (err) {
