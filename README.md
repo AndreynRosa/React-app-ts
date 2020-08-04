@@ -58,10 +58,6 @@ You  just needs node preferencial on 10.16.0. version.
   user this comands to do commits white patterns
   
  ````
-npm commit
-
-or
-
 yarn commit
 ````
 
