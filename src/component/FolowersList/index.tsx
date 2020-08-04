@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { FollowersState, Followers } from '../../store/ducks/folowers/types';
-import FolowersItem from '../FolowersItem';
+import { List, Typography } from 'antd';
+import { FollowersState } from '../../store/ducks/folowers/types';
 
 // import { Container } from './styles';
 interface RootState {
@@ -11,6 +11,7 @@ interface RootState {
 const FolowersList: React.FC = () => {
   const [serching, setSerching] = useState(false);
   const folowerList = useSelector((state: RootState) => state.folowers);
+  const { Title, Text } = Typography;
   const dispatch = useDispatch();
   useEffect(() => {
     if (!serching) {
@@ -19,11 +20,18 @@ const FolowersList: React.FC = () => {
   }, [dispatch, folowerList, serching]);
   return (
     <>
-      <ul>
-        {folowerList.data.map((folower: Followers) => (
-          <FolowersItem folowers={folower} />
-        ))}
-      </ul>
+      <List
+        style={{ minHeight: '224px' }}
+        size="small"
+        header={<Title level={4}>Folowers</Title>}
+        bordered
+        dataSource={folowerList.data}
+        renderItem={(item) => (
+          <List.Item>
+            <Text>{item.login} </Text>
+          </List.Item>
+        )}
+      />
     </>
   );
 };

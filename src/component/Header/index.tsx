@@ -7,11 +7,15 @@ const Header: React.FC = () => {
   return (
     <>
       {' '}
-      <LayoutHeader style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+      <LayoutHeader
+        style={{
+          position: 'fixed',
+          zIndex: 1,
+          width: '100%',
+        }}
+      >
         <div className="logo" />
-        <Typography.Title>
-          Github App - Visualize dados de quem quiser
-        </Typography.Title>
+        <Typography.Title>Github App</Typography.Title>
       </LayoutHeader>
     </>
   );

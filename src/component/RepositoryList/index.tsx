@@ -1,12 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import RepositoryItem from '../RepositoryItem';
+import { List, Typography } from 'antd';
 
-import {
-  RepositoriesState,
-  Repository,
-} from '../../store/ducks/repositories/types';
+import { RepositoriesState } from '../../store/ducks/repositories/types';
 
 interface RootState {
   repositories: RepositoriesState;
@@ -14,13 +11,22 @@ interface RootState {
 
 const RepositoryList: React.FC = () => {
   const repositoryList = useSelector((state: RootState) => state.repositories);
-
+  const { Title, Text } = Typography;
   return (
-    <ul>
-      {repositoryList.data.map((repositorysss: Repository) => (
-        <RepositoryItem key={repositorysss.id} repository={repositorysss} />
-      ))}
-    </ul>
+    <>
+      <List
+        style={{ minHeight: '224px' }}
+        size="small"
+        header={<Title level={4}>Repository</Title>}
+        bordered
+        dataSource={repositoryList.data}
+        renderItem={(item) => (
+          <List.Item>
+            <Text>{item.name}</Text>
+          </List.Item>
+        )}
+      />
+    </>
   );
 };
 

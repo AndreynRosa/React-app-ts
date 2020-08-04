@@ -21,10 +21,9 @@ const Avatar: React.FC = () => {
   }, [dispatch, usersList, serching]);
   return (
     <>
-      <Row>
-        <Col span={24} style={{ alignItems: 'center' }}>
-          <Title level={4}>
-            {' '}
+      <Row style={{ borderRight: '1px solid red' }}>
+        <Col span={24}>
+          <Title level={4} style={{ textAlignLast: 'center' }}>
             {usersList.data[0]?.name
               ? usersList.data[0]?.name
               : 'eu aqui meu nome'}
@@ -37,13 +36,13 @@ const Avatar: React.FC = () => {
             style={{ margin: '10% 30%' }}
           />
         </Col>
-        <Col span={24}>
+        <Col span={24} style={{ display: 'inline-grid', marginLeft: '20%' }}>
           <Text>
             {usersList.data[0]?.following
               ? `Following: ${usersList.data[0]?.following}`
               : 'bbbbbbbbbbbbbb'}
           </Text>
-          <br />
+
           <Text>
             {usersList.data[0]?.public_gists
               ? ` Gits: ${usersList.data[0]?.public_gists.toString()}`

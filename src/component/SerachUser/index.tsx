@@ -61,10 +61,12 @@ const SerachUser: React.FC = () => {
         <Form.Item shouldUpdate>
           <Button
             type="primary"
+            htmlType="submit"
             onClick={onFinish}
-            shape="circle"
             icon={<SearchOutlined />}
-          />
+          >
+            Search{' '}
+          </Button>
         </Form.Item>
       </Form>
     </>
