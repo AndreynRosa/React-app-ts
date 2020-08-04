@@ -70,7 +70,7 @@ yarn commit
   4 - Ant Design. <br />
   5 - And hooks. 
   
-  <h5>To test aplication </5>
-  1 - Jest,
-  2 - Enxyme,
-  3- moxios,
+  <h5>To test aplication </h5>
+  1 - Jest,<br />
+  2 - Enxyme,<br />
+  3- moxios,<br />
