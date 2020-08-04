@@ -14,6 +14,7 @@ In the store layer, the project applied a pattern where the separation was done 
 
 <h2 align="center"> Layout </h2>
 
+![LayoutTest](https://user-images.githubusercontent.com/36086251/89279834-384aa380-d61e-11ea-9390-66f329fe2a16.PNG)
 
 
 <h2 align="center"> Requirement </h2>
