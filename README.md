@@ -65,7 +65,7 @@ yarn commit
   1 - React whit typescipt.<br />
   2 - Redux. <br />
   3 - Sagas. <br />
-  4 - Ant Design. <br />
+  4 - Antd Design. <br />
   5 - And hooks. 
   
   <h5>To test aplication </h5>
