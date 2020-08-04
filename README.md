@@ -50,7 +50,6 @@ yarn start
  yarn test
   ````
 <h5>Commit : <h5/>
-  user this comands to do commits white patterns
   
  ````
 yarn commit
