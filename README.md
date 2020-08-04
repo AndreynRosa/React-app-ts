@@ -29,9 +29,7 @@ You  just needs node preferencial on 10.16.0. version.
 
 ``````
  npm install
-   
-   or
-   
+ or  
  yarn install
  
  ````````
@@ -41,11 +39,9 @@ You  just needs node preferencial on 10.16.0. version.
 
 
 ``````
-   npm start
-   
-   or
-   
- yarn start
+npm start
+or
+yarn start
 
 ````````
 
