@@ -48,8 +48,9 @@ yarn start
 <h5>Test : <h5/>
   
   ````
-  npm test
-  
+ npm test
+ or
+ yarn test
   ````
 <h5>Commit : <h5/>
   user this comands to do commits white patterns
