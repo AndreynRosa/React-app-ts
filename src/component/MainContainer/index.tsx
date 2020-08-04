@@ -7,14 +7,19 @@ import RepositoryList from '../RepositoryList';
 import FolowersList from '../FolowersList';
 
 const MainContainer: React.FC = () => {
-  const { Title } = Typography;
+  const { Title, Paragraph } = Typography;
   const { Content } = Layout;
   return (
     <>
       <Content style={{ padding: '0 90px', marginTop: 24 }}>
         <div style={{ padding: 30 }}>
-          <Title level={2}> Serach for yosur github contacts </Title>
-          <Row style={{ marginTop: '13%' }}>
+          <Title level={1} style={{ marginTop: '7%', marginBottom: 0 }}>
+            Search for someone on github.
+          </Title>
+          <Paragraph style={{ marginBottom: '5%' }}>
+            Input the username and press the search button.{' '}
+          </Paragraph>
+          <Row>
             <Col span={6} style={{ height: 'calc(60vh - 55px)' }}>
               <Avatar />
             </Col>

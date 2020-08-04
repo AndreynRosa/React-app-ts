@@ -15,7 +15,7 @@ const RepositoryList: React.FC = () => {
   return (
     <>
       <List
-        style={{ minHeight: '224px' }}
+        style={{ height: '244px' }}
         size="small"
         header={<Title level={4}>Repository</Title>}
         bordered
