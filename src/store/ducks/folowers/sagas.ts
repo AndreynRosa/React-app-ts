@@ -11,7 +11,7 @@ export function* loadFlowers(
   try {
     const url = `users/${action.payload.name}/followers`;
     const response = yield call(api.get, url);
-    yield put(folowersLoadSuccess(response.data));
+    yield put(folowersLoadSuccess(response.data.slice(0, 5)));
   } catch (err) {
     yield put(folowersLoadFailure());
   }

@@ -12,7 +12,7 @@ export function* loadRepositories(
     const url = `users/${action.payload.name}/repos`;
     const response = yield call(api.get, url);
 
-    yield put(repositoriesLoadSuccess(response.data));
+    yield put(repositoriesLoadSuccess(response.data.slice(0, 5)));
   } catch (err) {
     yield put(repositoriesLoadFailure());
   }
