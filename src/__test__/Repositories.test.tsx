@@ -4,6 +4,7 @@ import configureStore from 'redux-mock-store';
 import { shallow } from 'enzyme';
 import moxios from 'moxios';
 import createSagaMiddleware from 'redux-saga';
+import { call } from 'redux-saga/effects';
 import App from '../App';
 import RepositoryList from '../component/RepositoryList';
 import {
@@ -11,6 +12,8 @@ import {
   repositoriesLoadSuccess,
 } from '../store/ducks/repositories/actions';
 import GetRepositoriesMock from './mock/GetRepositoriesMock';
+import { loadRepositories } from '../store/ducks/repositories/sagas';
+import { RepositoriesTypes } from '../store/ducks/repositories/types';
 
 const initialState = {
   repositories: {
@@ -32,26 +35,25 @@ const mockStore = configureStore([sagaMiddleware]);
 const store = mockStore(initialState);
 
 // Component Test.
-describe(' Testing App Component', () => {
+describe(' TESTING APP READIRING', () => {
   it('render correctly', () => {
     const warppert = shallow(<App />, { context: { store } });
     expect(warppert).toMatchSnapshot();
   });
 });
 
-describe(' Testing RepositoryList Component', () => {
+describe(' TESTING REPOSITORY LIST COMPONENT', () => {
   it('render correctly', () => {
-    const warppert = shallow(
+    const wrapper = shallow(
       <Provider store={store}>
         <RepositoryList />
       </Provider>,
     ).dive();
-    expect(warppert).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });
 
 // Actions Test
-
 describe('ACTIONS FROM REPOSITORIES - TEST - GetRepositories ', () => {
   beforeEach(() => {
     moxios.install();
@@ -60,7 +62,7 @@ describe('ACTIONS FROM REPOSITORIES - TEST - GetRepositories ', () => {
     moxios.uninstall();
   });
 
-  it(' LOAD_REQUEST, LOAD_SUCCCES ', (done) => {
+  it('LOAD_REQUEST, LOAD_SUCCCES ', (done) => {
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
       request.respondWith({
@@ -79,5 +81,20 @@ describe('ACTIONS FROM REPOSITORIES - TEST - GetRepositories ', () => {
     });
 
     store.dispatch(repositoriesLoadRequest('AndreynRosa'));
+  });
+});
+
+// Sagas test
+
+describe('SAGAS - TEST - RepositoriesLoadSuccess ', () => {
+  it('sucess actions with repositories', () => {
+    const generator = loadRepositories({
+      type: RepositoriesTypes.LOAD_REQUEST,
+      payload: {
+        name: '',
+      },
+    });
+    const response = { data: { results: GetRepositoriesMock } };
+    expect(generator.next(response).value).toBeNull;
   });
 });
