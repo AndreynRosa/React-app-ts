@@ -62,7 +62,7 @@ You  just needs node preferencial on 10.16.0. version.
 yarn commit
 ````
 
- <h4>Dependecies :<h4/>
+ <h4>Dependecies :</h4>
   
   This project user </br >
   1 - React whit typescipt.<br />
