@@ -11,7 +11,7 @@ export function* loadRepositories(
   try {
     const url = `users/${action.payload.name}/repos`;
     const response = yield call(api.get, url);
-
+    console.log('mock', response.data.slice(0, 5));
     yield put(repositoriesLoadSuccess(response.data.slice(0, 5)));
   } catch (err) {
     yield put(repositoriesLoadFailure());

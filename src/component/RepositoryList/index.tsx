@@ -12,6 +12,7 @@ interface RootState {
 const RepositoryList: React.FC = () => {
   const repositoryList = useSelector((state: RootState) => state.repositories);
   const { Title, Text } = Typography;
+
   return (
     <>
       <List
@@ -22,7 +23,10 @@ const RepositoryList: React.FC = () => {
         dataSource={repositoryList.data}
         renderItem={(item) => (
           <List.Item>
-            <Text>{item.name}</Text>
+            <Text>
+              {item.name}
+              {item.id}
+            </Text>
           </List.Item>
         )}
       />
