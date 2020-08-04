@@ -44,7 +44,7 @@ const SerachUser: React.FC = () => {
       >
         <Form.Item
           name="username"
-          style={{ width: '300px' }}
+          style={{ marginLeft: '-2%', width: '320px' }}
           rules={[
             { required: true, message: 'Please input username to serach!' },
           ]}

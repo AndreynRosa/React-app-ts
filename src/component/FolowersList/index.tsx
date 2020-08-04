@@ -21,7 +21,7 @@ const FolowersList: React.FC = () => {
   return (
     <>
       <List
-        style={{ height: '244px' }}
+        style={{ height: '244px', background: '#fff' }}
         size="small"
         header={<Title level={4}>Folowers</Title>}
         bordered

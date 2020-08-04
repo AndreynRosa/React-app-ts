@@ -16,7 +16,7 @@ const MainContainer: React.FC = () => {
           <Title level={1} style={{ marginTop: '7%', marginBottom: 0 }}>
             Search for someone on github.
           </Title>
-          <Paragraph style={{ marginBottom: '5%' }}>
+          <Paragraph style={{ marginBottom: '5%', color: '#40a9ff' }}>
             Input the username and press the search button.{' '}
           </Paragraph>
           <Row>

@@ -12,10 +12,13 @@ const Header: React.FC = () => {
           position: 'fixed',
           zIndex: 1,
           width: '100%',
+          background: '#40a9ff',
         }}
       >
         <div className="logo" />
-        <Typography.Title>Github App</Typography.Title>
+        <Typography.Title style={{ marginLeft: '5%', color: '#fff' }}>
+          Github App
+        </Typography.Title>
       </LayoutHeader>
     </>
   );
