@@ -7,7 +7,7 @@ import RepositoryList from '../RepositoryList';
 import FolowersList from '../FolowersList';
 
 const MainContainer: React.FC = () => {
-  const { Title, Text } = Typography;
+  const { Title } = Typography;
   const { Content } = Layout;
   return (
     <>

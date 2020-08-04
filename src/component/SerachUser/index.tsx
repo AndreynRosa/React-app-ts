@@ -65,7 +65,7 @@ const SerachUser: React.FC = () => {
             onClick={onFinish}
             icon={<SearchOutlined />}
           >
-            Search{' '}
+            Search
           </Button>
         </Form.Item>
       </Form>

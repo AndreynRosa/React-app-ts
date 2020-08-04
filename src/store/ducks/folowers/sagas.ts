@@ -10,7 +10,6 @@ export function* loadFlowers(
 ) {
   try {
     const url = `users/${action.payload.name}/followers`;
-    console.log(url);
     const response = yield call(api.get, url);
     yield put(folowersLoadSuccess(response.data));
   } catch (err) {
