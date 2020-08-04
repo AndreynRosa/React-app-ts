@@ -22,7 +22,7 @@ const Avatar: React.FC = () => {
   return (
     <>
       <Row style={{ borderRight: '1px solid #40a9ff', height: '100%' }}>
-        {usersList.data[0]?.name ? (
+        {usersList.data[0]?.avatar ? (
           <>
             <Col span={24} style={{ margin: 0, height: '50px' }}>
               <Title
