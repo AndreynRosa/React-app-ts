@@ -76,7 +76,7 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "test:coverage": "node scripts/test.js --env=jsdom --coverage --runInBand --watchAll=false",
@@ -97,9 +97,6 @@
       "last 1 safari version"
     ]
   },
-  "engines": {
-    "node": "10.15.3"
- },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
