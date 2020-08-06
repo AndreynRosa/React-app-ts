@@ -2,6 +2,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 <h1 align="center"> Github api and fun whith react.js </h1>
+You can acess in Heroku server
+https://github-react-app-project.herokuapp.com/
+
 
 <h2 align="center"> Descrption </h2>
 <p align="justify"> This project consists of a react application using redux and typescript. </p>
