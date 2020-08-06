@@ -23,10 +23,7 @@ const RepositoryList: React.FC = () => {
         dataSource={repositoryList.data}
         renderItem={(item) => (
           <List.Item>
-            <Text>
-              {item.name}
-              {item.id}
-            </Text>
+            <Text>{item.name}</Text>
           </List.Item>
         )}
       />
